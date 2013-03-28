@@ -9,4 +9,4 @@ require('http').createServer(function (request, response) {
     request.addListener('end', function () {
         file.serve(request, response);
     });
-}).listen(8000);
+}).listen($PORT || 8000);
