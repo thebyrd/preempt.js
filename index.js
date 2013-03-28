@@ -17,7 +17,7 @@ $(document).ready(function () {
     if (cachedPage) {
       console.log('hit');
       $('body').html(cachedPage);
-      pushState({ foo: "bar"}, "ignored", e.target.href);
+      history.pushState({ foo: "bar"}, "ignored", e.target.href);
       return false;
     }
     console.log('miss');
