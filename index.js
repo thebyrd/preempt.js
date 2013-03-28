@@ -1,6 +1,5 @@
 $(document).ready(function () {
   $.each($('a'), function (idx, a) {
-
     if (!localStorage[a.href]) {
 
       $.get(a.href, function (html) {
@@ -16,9 +15,12 @@ $(document).ready(function () {
   $('a').click(function (e) {
     var cachedPage = localStorage[e.target.href];
     if (cachedPage) {
-      e.preventDefault();
+      console.log('hit');
       $('body').html(cachedPage);
+      pushState({ foo: "bar"}, "ignored", e.target.href);
+      return false;
     }
+    console.log('miss');
 
   });
 });
