@@ -12,10 +12,9 @@ $(document).ready(function () {
   });
 
 
-  $('a').click(function (e) {
+  $(document.body).on('click', 'a', function (e) {
     var cachedPage = localStorage[e.target.href];
     if (cachedPage) {
-      console.log('hit');
       $('body').html(cachedPage);
       history.pushState({ foo: "bar"}, "ignored", e.target.href);
       return false;
