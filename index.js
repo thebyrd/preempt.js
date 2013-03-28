@@ -19,7 +19,5 @@ $(document).ready(function () {
       history.pushState({ foo: "bar"}, "ignored", e.target.href);
       return false;
     }
-    console.log('miss');
-
   });
 });
