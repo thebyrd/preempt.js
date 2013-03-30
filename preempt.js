@@ -5,10 +5,8 @@ $(document).ready(function () {
 
   var store = {},
       storeSize = 0,
-      maxStoreSize = 20,
       links = $('a'),
-      pick = links.length > maxStoreSize ? Math.min : Math.max,
-      maxSize = pick(maxStoreSize, links.length),
+      maxSize = Math.min(20, links.length),
       fetch = function (idx, a) {
         if (!store[a.href])
           $.get(a.href, function (html) {
