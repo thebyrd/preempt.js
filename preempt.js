@@ -6,7 +6,7 @@ $(document).ready(function () {
   var store = {},
       storeSize = 0,
       links = $('a'),
-      maxSize = Math.min(20, Math.floor(0.3*links.length)),
+      maxSize = Math.max(20, Math.floor(0.3*links.length)),
       fetch = function (idx, a) {
         if (!store[a.href])
           $.get(a.href, function (html) {
