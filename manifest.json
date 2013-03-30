@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Preempt",
+  "version": "0.0.2",
+  "description": "Loads pages before you click on them.",
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "unlimitedStorage","contextMenus", "tabs", "http://*/*", "https://*/*"
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "content_scripts": [{
+    "js": ["jquery.js", "preempt.js"],
+    "matches": ["http://*/*", "https://*/*"]
+  }]
+}
