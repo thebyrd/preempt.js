@@ -1,5 +1,4 @@
 //hello world!
 
 //Gets loaded once!
-
-var localStorage = {};
+var GLOBAL = "HELLO!"
